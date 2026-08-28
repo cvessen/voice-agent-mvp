@@ -1,5 +1,4 @@
 export default function handler(req, res) {
-
   const naam =
     req.body?.SpeechResult ||
     req.query?.SpeechResult ||
