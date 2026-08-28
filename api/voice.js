@@ -12,7 +12,9 @@ export default function handler(req, res) {
     <Say language="nl-NL">
       Hallo.
 
-      U spreekt met de digitale assistent van Coen van Esseneten?
+      U spreekt met de pneemt.
+
+      Mag ik eerst uw naam weten?
     </Say>
 
   </Gather>
