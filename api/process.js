@@ -6,7 +6,6 @@ export default function handler(req, res) {
 
   const twiml = `<?xml version="1.0" encoding="UTF-8"?>
 <Response>
-
   <Say language="nl-NL">
     Dank u ${naam}.
   </Say>
@@ -14,7 +13,6 @@ export default function handler(req, res) {
   <Say language="nl-NL">
     Waarmee kan ik u helpen?
   </Say>
-
 </Response>`;
 
   res.setHeader("Content-Type", "text/xml");
