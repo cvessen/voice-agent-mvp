@@ -1,11 +1,23 @@
-export default function handler(request, response) {
+export default function handler(req, res) {
+
+  const naam =
+    req.body?.SpeechResult ||
+    req.query?.SpeechResult ||
+    "onbekend";
+
   const twiml = `<?xml version="1.0" encoding="UTF-8"?>
 <Response>
+
   <Say language="nl-NL">
-    Bedankt. Ik heb u gehoord.
+    Dank u ${naam}.
   </Say>
+
+  <Say language="nl-NL">
+    Waarmee kan ik u helpen?
+  </Say>
+
 </Response>`;
 
-  response.setHeader("Content-Type", "text/xml");
-  response.status(200).send(twiml);
+  res.setHeader("Content-Type", "text/xml");
+  res.status(200).send(twiml);
 }
