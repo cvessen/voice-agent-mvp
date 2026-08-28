@@ -1,20 +1,28 @@
 export default function handler(req, res) {
   const twiml = `<?xml version="1.0" encoding="UTF-8"?>
 <Response>
+
   <Gather
-    input="speech"
-    language="nl-NL"
-    speechTimeout="auto"
-    action="/api/process"
-    method="POST">
+      input="speech"
+      language="nl-NL"
+      speechTimeout="auto"
+      action="https://voice-agent-mvp-seven.vercel.app/api/process"
+      method="POST">
 
     <Say language="nl-NL">
-      Goedendag. U spreekt met de digitale assistent van Coen.
-      Mag ik eerst uw naam weten?
+      Hallo.
+
+      U spreekt met de digitale assistent van Coen van Esseneten?
     </Say>
 
   </Gather>
 
   <Say language="nl-NL">
+    Ik heb helaas geen antwoord ontvangen.
+  </Say>
+
+</Response>`;
+
+  res.setHeader("Content-Type", "text/xml");
   res.status(200).send(twiml);
 }
