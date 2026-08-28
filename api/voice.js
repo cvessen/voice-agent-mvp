@@ -6,8 +6,8 @@ export default function handler(request, response) {
     action="/api/process"
     method="POST"
     speechTimeout="auto">
+
     <Say language="nl-NL">
-      Goedendag. Wat is uw naam?
-");
+      Goedendag. Watpe", "text/xml");
   response.status(200).send(twiml);
 }
